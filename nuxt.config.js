@@ -39,9 +39,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['@nuxtjs/i18n', I18N],
-    ['@nuxtjs/axios', { baseURL: API_ROOT}]
+    ['@nuxtjs/i18n', I18N]
   ],
+
+  env: {
+    apiKey: process.env.VUE_APP_KEY,
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

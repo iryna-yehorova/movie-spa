@@ -8,23 +8,23 @@
             app
         >
             <v-list nav dense >
-                <v-list-item-group v-model="group" active-class="deep-blue--text text--white"> 
+                <v-list-item-group v-model="group" active-class="text--white"> 
                     <v-list-item  v-for="(item, index) in links"  :key="index">
-                       <v-list-item-title>{{ $t(item.locale)}}</v-list-item-title>
+                       <v-list-item-title>{{ $t(item.locale) }}</v-list-item-title>
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar dark>
-            <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar>
+            <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown" @click="drawer = !drawer" />
             <v-app-bar-title>Movietime App</v-app-bar-title>
 
             <v-spacer></v-spacer>
 
-            <v-list class="d-flex py-0" v-if="$vuetify.breakpoint.mdAndUp">
+            <v-list nav dense class="d-flex py-0" v-if="$vuetify.breakpoint.mdAndUp">
                 <v-list-item  v-for="(item, index) in links"  :key="index">
-                    <v-list-item-title>{{ $t(item.locale)}}</v-list-item-title>
+                    <v-list-item-title>{{ $t(item.locale) }}</v-list-item-title>
                 </v-list-item>
             </v-list>
 
@@ -46,8 +46,8 @@ export default {
             drawer: false,
             links: [
                 { name: 'home', locale: 'navLinks.home' },
-                { name: 'posts', locale: 'navLinks.posts' },
-                { name: 'about', locale: 'navLinks.about' },
+                { name: 'movies', locale: 'navLinks.movies' },
+                { name: 'tv', locale: 'navLinks.tv' },
             ]
         }
     },

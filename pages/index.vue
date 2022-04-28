@@ -5,7 +5,22 @@
 </template>
 
 <script>
+import * as dataApi from '../backend/dataApi'
+
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  data() {
+    return {
+      latestMovies: []
+    }
+  },
+  created() {
+    this.getLatestMovies()
+  },
+  methods: {
+    async getLatestMovies() {
+      this.latestMovies = await dataApi.getLatestMovies()
+    }
+  }
 }
 </script>
