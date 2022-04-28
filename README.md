@@ -1,4 +1,4 @@
-# movie-spa
+# Movietime App
 
 ## Build Setup
 
