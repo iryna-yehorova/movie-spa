@@ -10,11 +10,13 @@
             </v-btn>
         </template>
         <v-list dense>
-            <v-list-item v-for="(lang, index) in $i18n.locales" :key="index + 10" >
-                <nuxt-link :to="switchLocalePath(lang.code)" >
-                    {{ lang.name }}
-                </nuxt-link>
-            </v-list-item>              
+            <v-list-item-group active-class="text--white" class="d-flex-column align-center my-0">
+                <v-list-item v-for="(lang, index) in $i18n.locales" :key="index + 10" >
+                    <nuxt-link :to="switchLocalePath(lang.code)" class="white--text text-decoration-none mx-5">
+                        {{ lang.name }}
+                    </nuxt-link>
+                </v-list-item>
+            </v-list-item-group>              
         </v-list>
     </v-menu>
 </template>
