@@ -10,8 +10,10 @@
             </v-btn>
         </template>
         <v-list dense>
-            <v-list-item v-for="(lang, index) in locales" :key="index + 10" @click="activeLang = lang">
-                <v-list-item-title>{{ lang.name }}</v-list-item-title>
+            <v-list-item v-for="(lang, index) in $i18n.locales" :key="index + 10" >
+                <nuxt-link :to="switchLocalePath(lang.code)" >
+                    {{ lang.name }}
+                </nuxt-link>
             </v-list-item>              
         </v-list>
     </v-menu>
@@ -19,14 +21,10 @@
 
 <script>
 export default {
-    data: () => ({
-        activeLang: {},
-        locales: [
-            { name: 'English', code: 'EN' },
-            { name: 'Deutsch', code: 'DE' },
-            { name: 'Русский', code: 'RU' },
-        ]
-    })
-    
+    computed: {
+        activeLang() {
+            return this.$i18n.locales.find(l => l.code === this.$i18n.locale)
+        }
+    }
 }
 </script>
