@@ -8,10 +8,10 @@
 import * as dataApi from '../backend/dataApi'
 
 export default {
-  name: 'IndexPage',
+  name: 'home',
   data() {
     return {
-      latestMovies: []
+      latestMovie: {}
     }
   },
   created() {
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     async getLatestMovies() {
-      this.latestMovies = await dataApi.getLatestMovies()
+      this.latestMovie = await dataApi.getLatestMovies()
     }
   }
 }

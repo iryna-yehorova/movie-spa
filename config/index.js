@@ -10,12 +10,13 @@ export const I18N = {
     ],
     defaultLocale: 'en',
     routes: {
-        about: {
-            fr: '/a-propos',
-            en: '/about-us'
+        movies: {
+            fr: '/films',
+            ru: '/фильмы'
         },
-        posts: {
-            fr: 'artciles'
+        tv: {
+            fr: '/séries-télé',
+            ru: '/тв-шоу'
         },
         'post/_id': {
             fr: '/article/:id?'
