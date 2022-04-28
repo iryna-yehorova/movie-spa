@@ -10,7 +10,7 @@
             <v-list nav dense >
                 <v-list-item-group v-model="group" active-class="text--white"> 
                     <v-list-item  v-for="(item, index) in links"  :key="index">
-                        <nuxt-link :to="localePath(item.name)">{{ $t(item.locale) }}</nuxt-link>
+                        <nuxt-link :to="localePath(item.name)" class="white--text text-decoration-none">{{ $t(item.locale) }}</nuxt-link>
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
@@ -22,10 +22,12 @@
 
             <v-spacer></v-spacer>
 
-            <v-list nav dense class="d-flex py-0" v-if="$vuetify.breakpoint.mdAndUp">
-                <v-list-item  v-for="(item, index) in links"  :key="index" >
-                    <nuxt-link :to="localePath(item.name)">{{ $t(item.locale) }}</nuxt-link>
-                </v-list-item>
+            <v-list nav dense class="d-flex py-0" v-if="$vuetify.breakpoint.mdAndUp" :style="{ backgroundColor: 'transparent'}">
+                <v-list-item-group active-class="text--white" class="d-flex align-center my-0"> 
+                    <v-list-item v-for="(item, index) in links" :key="index">
+                        <nuxt-link :to="localePath(item.name)" class="white--text text-decoration-none mx-5">{{ $t(item.locale) }}</nuxt-link>
+                    </v-list-item>
+                </v-list-item-group>
             </v-list>
 
             <LanguageSwitcher /> 
