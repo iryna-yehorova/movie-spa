@@ -4,7 +4,9 @@
             <v-col>
                 <v-img 
                     :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
-                     gradient="96deg, rgba(255,255,255,0) 0%, rgba(49,49,80,0.1741071428571429) 45%, rgba(31,31,64,0.19931722689075626) 49%, rgba(16,16,32,0.5970763305322129) 62%, rgba(2,2,3,1) 96%, rgba(0,0,0,1) 100%"
+                    gradient="96deg, rgba(255,255,255,0) 0%, rgba(49,49,80,0.1741071428571429) 45%, rgba(31,31,64,0.19931722689075626) 49%, rgba(16,16,32,0.5970763305322129) 62%, rgba(2,2,3,1) 96%, rgba(0,0,0,1) 100%"
+                    :max-height="900"
+                    contain
                 />
             </v-col>
             <v-col>
@@ -49,7 +51,7 @@ export default {
     computed: {
         language() {
             return this.$i18n.locale;  
-        },
+        }
     },
     watch: {
         language() {
