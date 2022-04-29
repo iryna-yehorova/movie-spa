@@ -61,9 +61,6 @@ export default {
     methods: {
         async getData(id, language) {
             this.movie = await dataApi.getMovie(id, language)
-        },
-        getImageStyle() {
-            return `background: url("https://image.tmdb.org/t/p/w500/${this.movie.poster_path}")`
         }
     }
 }
