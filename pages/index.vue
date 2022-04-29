@@ -8,7 +8,7 @@
 import * as dataApi from '../backend/dataApi'
 
 export default {
-  name: 'home',
+  name: 'index',
   data() {
     return {
       latestMovie: {}

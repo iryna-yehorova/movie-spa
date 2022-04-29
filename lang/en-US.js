@@ -1,6 +1,6 @@
 export default {
     navLinks: {
-        home: 'Homepage',
+        index: 'Homepage',
         movies: 'Movies',
         tv: 'TV shows',
     }

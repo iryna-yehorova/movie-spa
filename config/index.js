@@ -9,17 +9,21 @@ export const I18N = {
         { code: 'ru', iso: 'ru-RU', name: 'Русский' }
     ],
     defaultLocale: 'en',
-    routes: {
+    pages: {
+        index: {
+            en: '/home',
+            fr: '/page-d\'accueil',
+            ru: '/home'
+        },
         movies: {
+            en: '/movies',
             fr: '/films',
-            ru: '/фильмы'
+            ru: '/films'
         },
         tv: {
-            fr: '/séries-télé',
-            ru: '/тв-шоу'
-        },
-        'post/_id': {
-            fr: '/article/:id?'
+            en: '/tv-shows',
+            fr: '/tv-shows',
+            ru: '/tv-shows'
         }
     },
     vueI18n: {

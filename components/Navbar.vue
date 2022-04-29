@@ -47,7 +47,7 @@ export default {
             group: null,
             drawer: false,
             links: [
-                { name: 'home', locale: 'navLinks.home' },
+                { name: 'index', locale: 'navLinks.index' },
                 { name: 'movies', locale: 'navLinks.movies' },
                 { name: 'tv', locale: 'navLinks.tv' },
             ]

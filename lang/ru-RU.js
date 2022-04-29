@@ -1,6 +1,6 @@
 export default {
     navLinks: {
-        home: 'Главная',
+        index: 'Главная',
         movies: 'Фильмы',
         tv: 'ТВ шоу',
     }
