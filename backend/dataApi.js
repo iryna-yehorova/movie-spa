@@ -7,11 +7,12 @@ const http = axios.create({
     }
   });
 
-async function getPopularMoviesList(page) {
+async function getPopularMoviesList(page, language) {
     try {
         const response = await http.get('movie/popular', {
             params: {
-                page
+                page,
+                language
             }
         })
         return {

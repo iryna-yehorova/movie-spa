@@ -43,17 +43,22 @@ export default {
   created() {
     this.getPopularMoviesList()
   },
+  computed: {
+    language() {
+      return this.$i18n.locale;
+    }
+  },
   watch: {
-    page: {
-      handler() {
-        this.getPopularMoviesList()
-      },
-
+    page() {
+      this.getPopularMoviesList()
+    },
+    language() {
+      this.getPopularMoviesList()
     }
   },
   methods: {
     async getPopularMoviesList() {
-      const res = await dataApi.getPopularMoviesList(this.page)
+      const res = await dataApi.getPopularMoviesList(this.page, this.language)
       this.total = res.totalPages
       this.popularList = res.items
     }
