@@ -7,13 +7,28 @@ const http = axios.create({
     }
   });
 
-async function getLatestMovies() {
+async function getPopularMoviesList(page) {
     try {
-        const response = await http.get('movie/latest')
-        return response.data
+        const response = await http.get('movie/popular', {
+            params: {
+                page
+            }
+        })
+        return {
+            totalPages: response.data.total_pages,
+            items: response.data.results.map(item => {
+                return {
+                    id: item.id,
+                    title: item.original_title,
+                    img: item.poster_path
+                }
+            })
+        }
     } catch (err) {
         throw new Error(err.text)
     }
 }
 
-export { getLatestMovies }
+export { 
+    getPopularMoviesList
+ }

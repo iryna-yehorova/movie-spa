@@ -43,7 +43,7 @@ export default {
   ],
 
   env: {
-    apiKey: process.env.VUE_APP_KEY,
+    apiKey: process.env.VUE_APP_KEY
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
