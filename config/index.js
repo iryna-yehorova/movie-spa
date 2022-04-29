@@ -20,6 +20,10 @@ export const I18N = {
         },
         tv: {
             en: '/tv-shows',
+        },
+        'movie/_id': {
+            en: '/movies/:id',
+            fr: '/films/:id'
         }
     },
     vueI18n: {

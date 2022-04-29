@@ -23,9 +23,9 @@
             <v-spacer></v-spacer>
 
             <v-list nav dense class="d-flex py-0" v-if="$vuetify.breakpoint.mdAndUp" :style="{ backgroundColor: 'transparent'}">
-                <v-list-item-group active-class="text--white" class="d-flex align-center my-0"> 
-                    <v-list-item v-for="(item, index) in links" :key="index">
-                        <nuxt-link :to="localePath(item.name)" class="white--text text-decoration-none mx-5">{{ $t(item.locale) }}</nuxt-link>
+                <v-list-item-group active-class="text--white" class="d-flex ma-0"> 
+                    <v-list-item v-for="(item, index) in links" :key="index" :style="{ width: '200px'}" class="d-flex justify-center my-0">
+                        <nuxt-link :to="localePath(item.name)" class="white--text text-decoration-none mx-5 text-center">{{ $t(item.locale) }}</nuxt-link>
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
