@@ -13,17 +13,13 @@ export const I18N = {
         index: {
             en: '/home',
             fr: '/page-d\'accueil',
-            ru: '/home'
         },
         movies: {
             en: '/movies',
             fr: '/films',
-            ru: '/films'
         },
         tv: {
             en: '/tv-shows',
-            fr: '/tv-shows',
-            ru: '/tv-shows'
         }
     },
     vueI18n: {
