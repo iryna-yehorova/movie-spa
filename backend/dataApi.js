@@ -30,6 +30,20 @@ async function getPopularMoviesList(page, language) {
     }
 }
 
+async function getMovie(id, language) {
+    try {
+        const response = await http.get('/movie/' + id, {
+            params: {
+                language
+            }
+        })
+        return response.data
+    } catch (err) {
+        throw new Error(err.text)
+    }
+}
+
 export { 
-    getPopularMoviesList
+    getPopularMoviesList,
+    getMovie
  }
