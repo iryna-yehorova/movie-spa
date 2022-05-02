@@ -26,7 +26,15 @@
                         <p class="display"> {{ movie.overview }}</p>
                     </v-row>
                     <v-row>
-                        <span v-for="(genre, index) in movie.genres" :key="index" class="mx-2">{{ genre.name }}</span>
+                        <v-chip
+                            v-for="(genre, index) in movie.genres" 
+                            :key="index" 
+                            class="mx-2"
+                            nuxt
+                            :to="localePath({ name: 'search-id', params: { id: genre.id } })"
+                        >
+                            {{ genre.name }}
+                        </v-chip>
                     </v-row>
                 </v-card-text>
             </v-col>

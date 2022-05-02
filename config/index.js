@@ -24,6 +24,10 @@ export const I18N = {
         'movie/_id': {
             en: '/movies/:id',
             fr: '/films/:id'
+        },
+        'search/_id': {
+            en: '/search/:id',
+            fr: '/chercher/:id'
         }
     },
     vueI18n: {

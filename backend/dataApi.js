@@ -21,7 +21,7 @@ async function getPopularMoviesList(page, language) {
                 return {
                     id: item.id,
                     title: item.original_title,
-                    img: item.poster_path
+                    poster_path: item.poster_path
                 }
             })
         }
@@ -43,7 +43,23 @@ async function getMovie(id, language) {
     }
 }
 
+async function searchMovie({ language, genre, page }) {
+    try {
+        const response = await http.get('discover/movie', {
+            params: {
+                page,
+                language,
+                with_genres: genre
+            }
+        })
+        return response.data
+    } catch (err) {
+        throw new Error(err.text)
+    }
+}
+
 export { 
     getPopularMoviesList,
-    getMovie
+    getMovie,
+    searchMovie
  }
