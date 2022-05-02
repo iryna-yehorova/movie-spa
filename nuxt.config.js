@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import { API_ROOT, I18N } from './config'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -38,7 +39,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    ['@nuxtjs/i18n', I18N]
   ],
+
+  env: {
+    apiKey: process.env.VUE_APP_KEY
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
