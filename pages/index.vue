@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import * as dataApi from '../backend/dataApi'
+import * as movieApi from '../backend/movieApi'
 import List from '../components/List.vue'
 
 export default {
@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     getPopularMoviesList(params) {
-      return dataApi.getPopularMoviesList(params);
+      return movieApi.getPopularMoviesList(params);
     }
   }
 }

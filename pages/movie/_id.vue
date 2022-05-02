@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import * as dataApi from '../../backend/dataApi'
+import * as movieApi from '../../backend/movieApi'
 
 export default {
     data() {
@@ -68,7 +68,7 @@ export default {
     },
     methods: {
         async getData(id, language) {
-            this.movie = await dataApi.getMovie(id, language)
+            this.movie = await movieApi.getMovie(id, language)
         }
     }
 }

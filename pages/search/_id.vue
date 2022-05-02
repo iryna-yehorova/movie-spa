@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import * as dataApi from '../../backend/dataApi'
+import * as movieApi from '../../backend/movieApi'
 import List from '../../components/List.vue'
 
 export default {
@@ -52,14 +52,14 @@ export default {
     },
     methods: {
         getSearch(params) {
-            return dataApi.searchMovie(params)
+            return movieApi.searchMovie(params)
         },
         async getGenres() {
             const params = {
                 page: 1,
                 language: this.language
             }
-            this.genresList = await dataApi.getGenres(params)
+            this.genresList = await movieApi.getGenres(params)
             let active = this.genresList.findIndex(item => item.id === Number(this.genre))
             this.activeGenres.push(active)
         }
