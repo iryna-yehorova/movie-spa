@@ -63,9 +63,23 @@ async function getGenres({ page, language }) {
     }
 }
 
+async function getRecommendations(id, language) {
+    try {
+        const response = await http.get(`/movie/${id}/recommendations`, {
+            params: {
+                language
+            }
+        })
+        return response.data.results
+    } catch (err) {
+        throw new Error(err.text)
+    }
+}
+
 export { 
     getPopularMoviesList,
     getMovie,
     searchMovie,
-    getGenres
+    getGenres,
+    getRecommendations
  }
