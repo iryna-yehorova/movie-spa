@@ -29,7 +29,7 @@
                 v-model="page"
                 color="grey darken-1"
                 :length="total"
-                total-visible="6"
+                total-visible="10"
                 class="mt-4"
             /> 
         </v-row>

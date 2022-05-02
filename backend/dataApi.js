@@ -7,7 +7,7 @@ const http = axios.create({
     }
   });
 
-async function getPopularMoviesList(page, language) {
+async function getPopularMoviesList({page, language}) {
     try {
         const response = await http.get('movie/popular', {
             params: {
@@ -15,16 +15,7 @@ async function getPopularMoviesList(page, language) {
                 language
             }
         })
-        return {
-            totalPages: response.data.total_pages,
-            items: response.data.results.map(item => {
-                return {
-                    id: item.id,
-                    title: item.original_title,
-                    poster_path: item.poster_path
-                }
-            })
-        }
+        return response.data
     } catch (err) {
         throw new Error(err.text)
     }
