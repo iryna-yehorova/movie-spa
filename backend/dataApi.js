@@ -32,7 +32,7 @@ async function getPopularMoviesList(page, language) {
 
 async function getMovie(id, language) {
     try {
-        const response = await http.get('/movie/' + id, {
+        const response = await http.get(`/movie/${id}`, {
             params: {
                 language
             }
