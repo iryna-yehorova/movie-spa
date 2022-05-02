@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row justify="center" align="center">
-            <v-chip-group v-model="activeGenre" active-class="primary--text">
+            <v-chip-group v-model="activeGenres" active-class="primary--text" multiple mandatory>
                 <v-chip 
                     v-for="genre in genresList"
                     :key="genre.id"
@@ -13,7 +13,7 @@
              </v-chip-group>
         </v-row>
         <List
-            :searchParams="{ genre }"
+            :searchParams="{ genre: searchParam }"
             :getItems="getSearch"    
         />
     </div>
@@ -32,7 +32,7 @@ export default {
         return {
             genre: '',
             genresList: [],
-            activeGenre: []
+            activeGenres: []
         }
     },
     created() {
@@ -42,6 +42,12 @@ export default {
     computed: {
         language() {
             return this.$i18n.locale
+        },
+        searchParam() {
+            let genreArr = []
+            this.activeGenres.forEach(ag => genreArr.push(this.genresList[ag].id))
+            genreArr = genreArr.join(',')
+            return genreArr
         }
     },
     methods: {
@@ -54,7 +60,8 @@ export default {
                 language: this.language
             }
             this.genresList = await dataApi.getGenres(params)
-            this.activeGenre = this.genresList.findIndex(item => item.id === Number(this.genre))
+            let active = this.genresList.findIndex(item => item.id === Number(this.genre))
+            this.activeGenres.push(active)
         }
     }
 }

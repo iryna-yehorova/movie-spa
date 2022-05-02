@@ -60,6 +60,9 @@ export default {
         },
         language() {
             this.getSearch()
+        },
+        searchParams() {
+            this.getSearch()
         }
     },
     created() {
