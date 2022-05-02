@@ -7,7 +7,7 @@ const http = axios.create({
     }
   });
 
-async function getPopularMoviesList({page, language}) {
+async function getPopularMoviesList({ page, language }) {
     try {
         const response = await http.get('movie/popular', {
             params: {
@@ -49,8 +49,23 @@ async function searchMovie({ language, genre, page }) {
     }
 }
 
+async function getGenres({ page, language }) {
+    try {
+        const response = await http.get('genre/movie/list', {
+            params: {
+                page,
+                language
+            }
+        })
+        return response.data.genres
+    } catch (err) {
+        throw new Error(err.text)
+    }
+}
+
 export { 
     getPopularMoviesList,
     getMovie,
-    searchMovie
+    searchMovie,
+    getGenres
  }
