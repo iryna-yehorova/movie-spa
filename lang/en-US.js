@@ -5,5 +5,6 @@ export default {
         tv: 'TV shows',
     },
     moviesDev: 'Movies are still in development',
-    tvDev: 'TV-shows are still in development'
+    tvDev: 'TV-shows are still in development',
+    recommended: 'Recommended movies:'
   }

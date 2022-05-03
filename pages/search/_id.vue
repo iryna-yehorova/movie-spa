@@ -5,7 +5,7 @@
                 <v-chip 
                     v-for="genre in genresList"
                     :key="genre.id"
-                    class="ma-3"
+                    class="ma-3 overline"
                     filter
                 >
                     {{ genre.name }}
