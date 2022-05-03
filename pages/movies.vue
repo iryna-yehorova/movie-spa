@@ -1,5 +1,5 @@
 <template>
-    <span> Movies in development</span>
+    <span>{{ $t('moviesDev' )}}</span>
 </template>
 
 <script>

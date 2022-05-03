@@ -1,13 +1,9 @@
 <template>
-  <span>TV shows in development</span>
+  <span>{{ $t('tvDev') }}</span>
 </template>
 
 <script>
 export default {
-    name: 'tv'
+  name: 'tv'
 }
 </script>
-
-<style>
-
-</style>
