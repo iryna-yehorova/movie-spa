@@ -3,30 +3,35 @@
         :id="id"
         :getData="getData"
         :getRecommended="getRecommended"
-        route="movie-id"
+        route="serial-id"
     />
 </template>
 
 <script>
-import * as movieApi from '../../backend/movieApi'
+import Card from '../../components/Card.vue'
+import * as tvApi from '../../backend/tvApi'
 
 export default {
-    name: 'movie-id',
+    name: 'serial-id',
+    components: {
+        Card
+    },
     data() {
         return {
-            id: null, 
+            id: null
         }
     },
     created() {
         this.id = this.$route.params.id
     },
     methods: {
-         getData(id, language) {
-            return movieApi.getMovie(id, language);
+        getData(id, language) {
+            return tvApi.getTv(id, language)
         },
         getRecommended(id, language) {
-            return movieApi.getRecommendations(id, language)
+            return tvApi.getRecommendationsTv(id, language)
         }
     }
 }
+
 </script>

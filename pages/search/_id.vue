@@ -46,8 +46,7 @@ export default {
         searchParam() {
             let genreArr = []
             this.activeGenres.forEach(ag => genreArr.push(this.genresList[ag].id))
-            genreArr = genreArr.join(',')
-            return genreArr
+            return genreArr.join(',')
         }
     },
     methods: {
@@ -66,3 +65,7 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+</style>

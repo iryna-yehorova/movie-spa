@@ -25,6 +25,9 @@ export const I18N = {
             en: '/movies/:id',
             fr: '/films/:id'
         },
+        'serial/_id': {
+            en: '/serial/:id',
+        },
         'search/_id': {
             en: '/search/:id',
             fr: '/chercher/:id'
