@@ -41,7 +41,7 @@
                             :key="index" 
                             class="mx-2 overline"
                             nuxt
-                            :to="localePath({ name: 'search-id', params: { id: genre.id } })"
+                            :to="localePath({ name: searchRoute, params: { id: genre.id } })"
                         >
                             {{ genre.name }}
                         </v-chip>
@@ -96,7 +96,8 @@ export default {
         route: String, 
         id: String,
         getData: Function,
-        getRecommended: Function
+        getRecommended: Function,
+        searchRoute: String
     },
     data() {
         return {
@@ -112,9 +113,14 @@ export default {
             return this.item.in_production ? 'Filming' : 'Finished'
         },
         serialTime() {
+            let first = new Date(this.item.first_air_date).getFullYear();
+            let last = new Date(this.item.last_air_date).getFullYear();
+
             return this.item.in_production 
-                ? `${ new Date(this.item.first_air_date).getFullYear() } - nowadays`
-                : `${ new Date(this.item.first_air_date).getFullYear() } - ${ new Date(this.item.last_air_date).getFullYear() }`
+                ? `${ first } - nowadays`
+                : first === last 
+                    ? `${ first }`
+                    : `${ first } - ${ last }`
         }
     },
     watch: {

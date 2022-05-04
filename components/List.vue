@@ -18,7 +18,8 @@
                                 alt="Movie or tv show image"
                                 width="150"
                             />
-                            <p class="headline mt-2 text-center">{{ item.title }}</p>
+                            <p class="headline mt-2 text-center" v-if="item.title">{{ item.title }}</p>
+                            <p class="headline mt-2 text-center" v-else>{{ item.name }}</p>
                         </v-col>
                     </v-row>
                 </v-card-text>

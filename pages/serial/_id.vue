@@ -4,6 +4,7 @@
         :getData="getData"
         :getRecommended="getRecommended"
         route="serial-id"
+        searchRoute="serial-search-id"
     />
 </template>
 

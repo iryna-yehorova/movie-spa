@@ -4,6 +4,7 @@
         :getData="getData"
         :getRecommended="getRecommended"
         route="movie-id"
+        searchRoute="movie-search-id"
     />
 </template>
 
@@ -21,7 +22,7 @@ export default {
         this.id = this.$route.params.id
     },
     methods: {
-         getData(id, language) {
+        getData(id, language) {
             return movieApi.getMovie(id, language);
         },
         getRecommended(id, language) {
