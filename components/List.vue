@@ -39,7 +39,7 @@
 
 <script>
 export default {
-    props:{
+    props: {
         getItems: Function,
         searchParams: Object,
         route: String
@@ -99,7 +99,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

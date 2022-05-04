@@ -51,7 +51,7 @@
         </v-row>
         <v-row v-if="recommended && recommended.length > 1">
             <v-col class="ml-5 pl-5">
-                <p class="text-h5 ml-8">{{ $t('recommended') }}</p>
+                <p class="text-h5 ml-8">{{ searchRoute.includes('movie') ? $t('recommendedMovies') : $t('recommendedSerials')}}</p>
             </v-col>
             <v-col>
                 <v-slide-group

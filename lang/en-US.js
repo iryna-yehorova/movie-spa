@@ -6,5 +6,10 @@ export default {
     },
     moviesDev: 'Movies are still in development',
     tvDev: 'TV-shows are still in development',
-    recommended: 'Recommended movies:'
+    recommendedMovies: 'Recommended movies:',
+    recommendedSerials: 'Recommended TV serials:',
+    indexLinks: {
+        movie: 'Go To Movies',
+        tv: 'Go To TV Serials'
+    }
   }
