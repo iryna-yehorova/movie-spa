@@ -3,19 +3,23 @@
         :id="id"
         :getData="getData"
         :getRecommended="getRecommended"
-        route="movie-id"
-        searchRoute="movie-search-id"
+        route="serial-id"
+        searchRoute="serial-search-id"
     />
 </template>
 
 <script>
-import * as movieApi from '../../backend/movieApi'
+import Card from '../../components/Card.vue'
+import * as tvApi from '../../backend/tvApi'
 
 export default {
-    name: 'movie-id',
+    name: 'serial-id',
+    components: {
+        Card
+    },
     data() {
         return {
-            id: null, 
+            id: null
         }
     },
     created() {
@@ -23,11 +27,12 @@ export default {
     },
     methods: {
         getData(id, language) {
-            return movieApi.getMovie(id, language);
+            return tvApi.getTv(id, language)
         },
         getRecommended(id, language) {
-            return movieApi.getRecommendations(id, language)
+            return tvApi.getRecommendationsTv(id, language)
         }
     }
 }
+
 </script>

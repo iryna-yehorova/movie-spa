@@ -8,17 +8,18 @@
                 class="ma-3" 
                 height="330" 
                 nuxt 
-                :to="localePath({ name: 'movie-id', params: { id: item.id } })"
+                :to="localePath({ name: route, params: { id: item.id } })"
             >
                 <v-card-text>
                     <v-row align="center" class="d-flex">
                         <v-col class="d-flex flex-column justify-center align-center">
                             <v-img
                                 :src="'https://image.tmdb.org/t/p/w500/' + item.poster_path"
-                                alt="Movie image"
+                                alt="Movie or tv show image"
                                 width="150"
                             />
-                            <p class="headline mt-2 text-center">{{ item.title }}</p>
+                            <p class="headline mt-2 text-center" v-if="item.title">{{ item.title }}</p>
+                            <p class="headline mt-2 text-center" v-else>{{ item.name }}</p>
                         </v-col>
                     </v-row>
                 </v-card-text>
@@ -38,9 +39,10 @@
 
 <script>
 export default {
-    props:{
+    props: {
         getItems: Function,
-        searchParams: Object
+        searchParams: Object,
+        route: String
     },
     data() {
         return {
@@ -97,7 +99,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

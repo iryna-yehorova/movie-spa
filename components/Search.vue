@@ -14,30 +14,31 @@
         </v-row>
         <List
             :searchParams="{ genre: searchParam }"
-            :getItems="getSearch"    
+            :getItems="getSearch"
+            :route="route"    
         />
     </div>
 </template>
 
 <script>
-import * as movieApi from '../../backend/movieApi'
-import List from '../../components/List.vue'
+import List from './List.vue'
 
 export default {
-    name: 'search-id',
+    name: 'search',
+    props: {
+        genre: String,
+        searchItem: Function,
+        getGenresList: Function,
+        route: String
+    },
     components: {
         List
     },
     data() {
         return {
-            genre: '',
             genresList: [],
             activeGenres: []
         }
-    },
-    created() {
-        this.genre = this.$route.params.id
-        this.getGenres()
     },
     computed: {
         language() {
@@ -46,20 +47,27 @@ export default {
         searchParam() {
             let genreArr = []
             this.activeGenres.forEach(ag => genreArr.push(this.genresList[ag].id))
-            genreArr = genreArr.join(',')
-            return genreArr
+            return genreArr.join(',')
+        }
+    },
+    watch: {
+        genre: {
+            handler() {
+                this.getGenres()
+            },
+            immediate: true
         }
     },
     methods: {
         getSearch(params) {
-            return movieApi.searchMovie(params)
+            return this.searchItem(params)
         },
         async getGenres() {
             const params = {
                 page: 1,
                 language: this.language
             }
-            this.genresList = await movieApi.getGenres(params)
+            this.genresList = await this.getGenresList(params)
             let active = this.genresList.findIndex(item => item.id === Number(this.genre))
             this.activeGenres.push(active)
         }

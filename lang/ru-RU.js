@@ -6,5 +6,11 @@ export default {
     },
     moviesDev: 'Фильмы находятся в разработке',
     tvDev: 'ТВ-шоу находятся в разработке',
-    recommended: 'Рекомендованные фильмы:'
+    recommendedMovies: 'Рекомендованные фильмы:',
+    recommendedSerials: 'Рекомендованные сериалы:',
+    indexLinks: {
+        movie: 'Фильмы',
+        tv: 'Сериалы'
+    }
+
   }

@@ -6,5 +6,10 @@ export default {
     },
     moviesDev: 'Les films sont encore en développement',
     tvDev: 'Les émissions de télévision sont encore en développement',
-    recommended: 'Films recommandés:'
+    recommendedMovies: 'Films recommandés:',
+    recommendedSerials: 'Séries télévisées recommandées:',
+    indexLinks: {
+        movie: 'Aller aux films',
+        tv: 'Aller aux séries télévisées'
+    }
   }
